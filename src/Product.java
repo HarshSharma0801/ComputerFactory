@@ -8,7 +8,8 @@ public class Product {
         this.model = model;
         this.manufacturer = manufacturer;
     }
-    class Monitor extends Product{
+}
+ class Monitor extends Product{
         private int size;
         private String resolution;
         public Monitor(String model, String manufacturer) {
@@ -21,10 +22,11 @@ public class Product {
             this.resolution = resolution;
         }
         public void drawPixelAt(int x , int y ,String color){
-            System.out.println(String.format("Drawing pixel at %d,%d inr color %s ",x,y,color));
+            System.out.println(String.format(
+                    "Drawing pixel at %d,%d in color %s ", x, y, color));
         }
     }
-    class Motherboard extends Product{
+ class Motherboard extends Product{
         private int ramSlots;
         private int cardSlots;
         private String bios;
@@ -42,7 +44,7 @@ public class Product {
             System.out.println("program "+programName+" is now loading...");
         }
     }
-    class ComputerCase extends Product{
+ class ComputerCase extends Product{
         private String powerSupply;
         public ComputerCase(String model, String manufacturer) {
             super(model, manufacturer);
@@ -52,5 +54,8 @@ public class Product {
             super(model, manufacturer);
             this.powerSupply = powerSupply;
         }
+        public void pressPowerButton (){
+            System.out.println("Power button pressed");
+        }
     }
-}
+
